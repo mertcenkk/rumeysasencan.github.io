@@ -528,11 +528,64 @@
         }
 
         .packages-grid {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .policy-notice {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            background: linear-gradient(135deg, #FFF5F5 0%, #FFF0ED 100%);
+            border: 1px solid var(--color-terracotta);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .policy-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .policy-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--color-terracotta-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-content p {
+            font-size: 0.9rem;
+            color: var(--color-ink-light);
+            line-height: 1.6;
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--color-sage);
+            color: var(--color-white);
+            padding: 0.25rem 0.6rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .package-card.featured .discount-badge {
+            background: var(--color-terracotta);
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            opacity: 0.5;
+            font-size: 1.25rem;
+            margin-right: 0.5rem;
         }
 
         .package-card {
@@ -1210,58 +1263,120 @@
         <div class="section-header">
             <span class="section-tag" data-en="Pricing" data-tr="Fiyatlandırma">Pricing</span>
             <h2 class="section-title" data-en="Lesson Packages" data-tr="Ders Paketleri">Lesson Packages</h2>
+            <p style="color: var(--color-ink-light); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;" data-en="The more lessons you book, the more you save! Choose the package that fits your learning goals." data-tr="Ne kadar çok ders alırsanız, o kadar çok tasarruf edersiniz! Öğrenme hedeflerinize uygun paketi seçin.">The more lessons you book, the more you save! Choose the package that fits your learning goals.</p>
         </div>
         <div class="packages-grid">
-            <!-- Starter Package -->
+            <!-- Single Lesson -->
             <div class="package-card">
-                <div class="package-name" data-en="Starter" data-tr="Başlangıç">Starter</div>
-                <div class="package-desc" data-en="Perfect for trying out" data-tr="Denemek için ideal">Perfect for trying out</div>
+                <div class="package-name" data-en="Single Lesson" data-tr="Tek Ders">Single Lesson</div>
+                <div class="package-desc" data-en="Try before you commit" data-tr="Denemek için ideal">Try before you commit</div>
                 <div class="package-price">
-                    <span class="price-amount">₺600</span>
+                    <span class="price-amount">₺500</span>
+                    <span class="price-period" data-en="/ lesson" data-tr="/ ders">/ lesson</span>
+                </div>
+                <ul class="package-features">
+                    <li><span class="check-icon">✓</span><span data-en="1 x 50-minute lesson" data-tr="1 x 50 dakikalık ders">1 x 50-minute lesson</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="Flexible scheduling" data-tr="Esnek planlama">Flexible scheduling</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="Learning materials included" data-tr="Öğrenme materyalleri dahil">Learning materials included</span></li>
+                </ul>
+                <a href="#demo" class="package-btn" data-en="Book Now" data-tr="Rezervasyon Yap">Book Now</a>
+            </div>
+
+            <!-- 4 Lessons Package -->
+            <div class="package-card">
+                <span class="discount-badge">5% OFF</span>
+                <div class="package-name" data-en="Starter" data-tr="Başlangıç">Starter</div>
+                <div class="package-desc" data-en="4 lessons package" data-tr="4 derslik paket">4 lessons package</div>
+                <div class="package-price">
+                    <span class="original-price">₺2,000</span>
+                    <span class="price-amount">₺1,900</span>
                     <span class="price-period" data-en="/ 4 lessons" data-tr="/ 4 ders">/ 4 lessons</span>
                 </div>
                 <ul class="package-features">
                     <li><span class="check-icon">✓</span><span data-en="4 x 50-minute lessons" data-tr="4 x 50 dakikalık ders">4 x 50-minute lessons</span></li>
-                    <li><span class="check-icon">✓</span><span data-en="₺150 per lesson" data-tr="Ders başına ₺150">₺150 per lesson</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="₺475 per lesson" data-tr="Ders başına ₺475">₺475 per lesson</span></li>
                     <li><span class="check-icon">✓</span><span data-en="Flexible scheduling" data-tr="Esnek planlama">Flexible scheduling</span></li>
                     <li><span class="check-icon">✓</span><span data-en="Learning materials included" data-tr="Öğrenme materyalleri dahil">Learning materials included</span></li>
                 </ul>
                 <a href="#demo" class="package-btn" data-en="Get Started" data-tr="Başla">Get Started</a>
             </div>
             
-            <!-- Popular Package -->
+            <!-- 8 Lessons Package - Popular -->
             <div class="package-card featured">
                 <div class="package-badge" data-en="Most Popular" data-tr="En Popüler">Most Popular</div>
+                <span class="discount-badge">10% OFF</span>
                 <div class="package-name" data-en="Standard" data-tr="Standart">Standard</div>
-                <div class="package-desc" data-en="Best value for regular learners" data-tr="Düzenli öğrenciler için en iyi değer">Best value for regular learners</div>
+                <div class="package-desc" data-en="8 lessons package" data-tr="8 derslik paket">8 lessons package</div>
                 <div class="package-price">
-                    <span class="price-amount">₺1,050</span>
+                    <span class="original-price">₺4,000</span>
+                    <span class="price-amount">₺3,600</span>
                     <span class="price-period" data-en="/ 8 lessons" data-tr="/ 8 ders">/ 8 lessons</span>
                 </div>
                 <ul class="package-features">
                     <li><span class="check-icon">✓</span><span data-en="8 x 50-minute lessons" data-tr="8 x 50 dakikalık ders">8 x 50-minute lessons</span></li>
-                    <li><span class="check-icon">✓</span><span data-en="₺131 per lesson (12% off)" data-tr="Ders başına ₺131 (%12 indirim)">₺131 per lesson (12% off)</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="₺450 per lesson" data-tr="Ders başına ₺450">₺450 per lesson</span></li>
                     <li><span class="check-icon">✓</span><span data-en="Priority scheduling" data-tr="Öncelikli planlama">Priority scheduling</span></li>
-                    <li><span class="check-icon">✓</span><span data-en="Free speaking group access" data-tr="Ücretsiz konuşma grubu erişimi">Free speaking group access</span></li>
                     <li><span class="check-icon">✓</span><span data-en="Progress tracking" data-tr="İlerleme takibi">Progress tracking</span></li>
                 </ul>
                 <a href="#demo" class="package-btn" data-en="Get Started" data-tr="Başla">Get Started</a>
             </div>
             
-            <!-- Premium Package -->
+            <!-- 12 Lessons Package -->
             <div class="package-card">
-                <div class="package-name" data-en="Premium" data-tr="Premium">Premium</div>
-                <div class="package-desc" data-en="For serious commitment" data-tr="Ciddi öğrenciler için">For serious commitment</div>
+                <span class="discount-badge">15% OFF</span>
+                <div class="package-name" data-en="Plus" data-tr="Plus">Plus</div>
+                <div class="package-desc" data-en="12 lessons package" data-tr="12 derslik paket">12 lessons package</div>
                 <div class="package-price">
-                    <span class="price-amount">₺1,800</span>
+                    <span class="original-price">₺6,000</span>
+                    <span class="price-amount">₺5,100</span>
+                    <span class="price-period" data-en="/ 12 lessons" data-tr="/ 12 ders">/ 12 lessons</span>
+                </div>
+                <ul class="package-features">
+                    <li><span class="check-icon">✓</span><span data-en="12 x 50-minute lessons" data-tr="12 x 50 dakikalık ders">12 x 50-minute lessons</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="₺425 per lesson" data-tr="Ders başına ₺425">₺425 per lesson</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="Priority scheduling" data-tr="Öncelikli planlama">Priority scheduling</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="Progress tracking" data-tr="İlerleme takibi">Progress tracking</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="WhatsApp support" data-tr="WhatsApp desteği">WhatsApp support</span></li>
+                </ul>
+                <a href="#demo" class="package-btn" data-en="Get Started" data-tr="Başla">Get Started</a>
+            </div>
+
+            <!-- 16 Lessons Package -->
+            <div class="package-card">
+                <span class="discount-badge">20% OFF</span>
+                <div class="package-name" data-en="Premium" data-tr="Premium">Premium</div>
+                <div class="package-desc" data-en="16 lessons package" data-tr="16 derslik paket">16 lessons package</div>
+                <div class="package-price">
+                    <span class="original-price">₺8,000</span>
+                    <span class="price-amount">₺6,400</span>
                     <span class="price-period" data-en="/ 16 lessons" data-tr="/ 16 ders">/ 16 lessons</span>
                 </div>
                 <ul class="package-features">
                     <li><span class="check-icon">✓</span><span data-en="16 x 50-minute lessons" data-tr="16 x 50 dakikalık ders">16 x 50-minute lessons</span></li>
-                    <li><span class="check-icon">✓</span><span data-en="₺112.50 per lesson (25% off)" data-tr="Ders başına ₺112.50 (%25 indirim)">₺112.50 per lesson (25% off)</span></li>
-                    <li><span class="check-icon">✓</span><span data-en="Unlimited speaking groups" data-tr="Sınırsız konuşma grubu">Unlimited speaking groups</span></li>
-                    <li><span class="check-icon">✓</span><span data-en="WhatsApp support" data-tr="WhatsApp desteği">WhatsApp support</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="₺400 per lesson" data-tr="Ders başına ₺400">₺400 per lesson</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="Priority scheduling" data-tr="Öncelikli planlama">Priority scheduling</span></li>
                     <li><span class="check-icon">✓</span><span data-en="Custom study plan" data-tr="Özel çalışma planı">Custom study plan</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="WhatsApp support" data-tr="WhatsApp desteği">WhatsApp support</span></li>
+                </ul>
+                <a href="#demo" class="package-btn" data-en="Get Started" data-tr="Başla">Get Started</a>
+            </div>
+
+            <!-- 24 Lessons Package -->
+            <div class="package-card">
+                <span class="discount-badge">25% OFF</span>
+                <div class="package-name" data-en="Ultimate" data-tr="Ultimate">Ultimate</div>
+                <div class="package-desc" data-en="24 lessons package" data-tr="24 derslik paket">24 lessons package</div>
+                <div class="package-price">
+                    <span class="original-price">₺12,000</span>
+                    <span class="price-amount">₺9,000</span>
+                    <span class="price-period" data-en="/ 24 lessons" data-tr="/ 24 ders">/ 24 lessons</span>
+                </div>
+                <ul class="package-features">
+                    <li><span class="check-icon">✓</span><span data-en="24 x 50-minute lessons" data-tr="24 x 50 dakikalık ders">24 x 50-minute lessons</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="₺375 per lesson" data-tr="Ders başına ₺375">₺375 per lesson</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="VIP scheduling" data-tr="VIP planlama">VIP scheduling</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="Custom study plan" data-tr="Özel çalışma planı">Custom study plan</span></li>
+                    <li><span class="check-icon">✓</span><span data-en="24/7 WhatsApp support" data-tr="7/24 WhatsApp desteği">24/7 WhatsApp support</span></li>
                 </ul>
                 <a href="#demo" class="package-btn" data-en="Get Started" data-tr="Başla">Get Started</a>
             </div>
@@ -1269,10 +1384,19 @@
         
         <!-- Speaking Group Package -->
         <div style="max-width: 500px; margin: 3rem auto 0; text-align: center; padding: 2rem; background: var(--color-cream); border-radius: 16px;">
-            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem;" data-en="Speaking Groups Only" data-tr="Sadece Konuşma Grupları">Speaking Groups Only</h3>
-            <p style="color: var(--color-ink-light); margin-bottom: 1rem;" data-en="Join weekly conversation sessions" data-tr="Haftalık konuşma seanslarına katılın">Join weekly conversation sessions</p>
-            <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 600; margin-bottom: 1rem;">₺200 <span style="font-size: 1rem; font-weight: 400; color: var(--color-ink-light);" data-en="/ month (4 sessions)" data-tr="/ ay (4 seans)">/ month (4 sessions)</span></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem;" data-en="Speaking Groups" data-tr="Konuşma Grupları">Speaking Groups</h3>
+            <p style="color: var(--color-ink-light); margin-bottom: 1rem;" data-en="Join weekly conversation sessions with other learners" data-tr="Diğer öğrencilerle haftalık konuşma seanslarına katılın">Join weekly conversation sessions with other learners</p>
+            <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 600; margin-bottom: 1rem;">₺800 <span style="font-size: 1rem; font-weight: 400; color: var(--color-ink-light);" data-en="/ month (4 sessions)" data-tr="/ ay (4 seans)">/ month (4 sessions)</span></div>
             <a href="#demo" class="btn btn-secondary" data-en="Join Speaking Group" data-tr="Gruba Katıl">Join Speaking Group</a>
+        </div>
+
+        <!-- Cancellation Policy Notice -->
+        <div class="policy-notice">
+            <div class="policy-icon">⚠️</div>
+            <div class="policy-content">
+                <h4 data-en="Important: 24-Hour Cancellation Policy" data-tr="Önemli: 24 Saat Önceden İptal Politikası">Important: 24-Hour Cancellation Policy</h4>
+                <p data-en="Please note that lessons must be cancelled or rescheduled at least 24 hours in advance. If you do not inform me at least 24 hours before your scheduled lesson, the lesson will be marked as completed and cannot be rescheduled or refunded. This policy ensures fair scheduling for all students." data-tr="Lütfen derslerin en az 24 saat önceden iptal edilmesi veya yeniden planlanması gerektiğini unutmayın. Planlanan dersinizden en az 24 saat önce beni bilgilendirmezseniz, ders tamamlanmış olarak işaretlenecek ve yeniden planlanamayacak veya iade edilemeyecektir. Bu politika, tüm öğrenciler için adil planlama sağlar.">Please note that lessons must be cancelled or rescheduled at least 24 hours in advance. If you do not inform me at least 24 hours before your scheduled lesson, the lesson will be marked as completed and cannot be rescheduled or refunded. This policy ensures fair scheduling for all students.</p>
+            </div>
         </div>
     </section>
 
